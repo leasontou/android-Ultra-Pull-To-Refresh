@@ -287,12 +287,8 @@ public class PtrFrameLayout extends ViewGroup {
                 mScrollChecker.abortIfWorking();
 
                 mPreventForHorizontal = false;
-                if (mPtrIndicator.hasLeftStartPosition()) {
-                    // do nothing, intercept child event
-                } else {
-                    dispatchTouchEventSupper(e);
-                }
-                return true;
+                
+                return dispatchTouchEventSupper(e);
 
             case MotionEvent.ACTION_MOVE:
                 mLastMoveEvent = e;
